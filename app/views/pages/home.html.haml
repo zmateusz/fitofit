@@ -1,0 +1,12 @@
+= console
+
+= form_for (@question), :url => pages_home_path do |f|
+  = f.text_field :content, value: params[:content]
+  %br
+  = f.submit 'Search', class: 'button'
+
+-if @cords
+  = @cords[:lat]
+  = @cords[:lng]
+  %br
+  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@cords[:lat]}%2C#{@cords[:lng]}&maptype=hybrid"
