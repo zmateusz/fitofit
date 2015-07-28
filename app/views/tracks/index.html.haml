@@ -1,0 +1,5 @@
+%h1 Tracks index
+
+- @tracks.each do |track|
+  = link_to track.location_a, track_path(track)
+  %br

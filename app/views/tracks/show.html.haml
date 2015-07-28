@@ -1,0 +1,12 @@
+%h1 Tracks show
+
+= @track.location_a
+%br
+= @track.location_b
+%br
+= "#{@track.distance} km"
+%br
+= static_map(@track)
+
+%br
+= link_to "Destroy", @track, method: :delete, data: { confirm: 'Are you sure?' }

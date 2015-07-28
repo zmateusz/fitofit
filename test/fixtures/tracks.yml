@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  distance: 1.5
+  location_a: MyString
+  location_b: MyString
+
+two:
+  description: MyText
+  distance: 1.5
+  location_a: MyString
+  location_b: MyString
