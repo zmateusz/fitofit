@@ -1,3 +1,5 @@
+= render "tracks_links"
+
 %h1 Tracks show
 
 = @track.location_a
@@ -5,6 +7,8 @@
 = @track.location_b
 %br
 = "#{@track.distance} km"
+%br
+= l @track.created_at
 %br
 = static_map(@track)
 

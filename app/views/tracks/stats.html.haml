@@ -1,0 +1,17 @@
+= render "tracks_links"
+
+%br
+stats page
+%br
+- @week_tracks.each do |track|
+  = link_to track.location_a, track_path(track)
+  %br
+
+%br
+= "this week: #{@distance_sum} km"
+
+%br
+%br
+- @month_days.each do |key, value|
+  = "#{l key}: #{value} km"
+  %br

@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#home'
 
+  get 'tracks/stats', as: 'tracks_stats'
   resources :tracks
 
   get 'pages/home'
   post 'pages/home'
-  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

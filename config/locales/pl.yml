@@ -1,0 +1,24 @@
+pl:
+  time:
+    formats:
+      default: "%-d. %B"
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%-d. %B"
+    month_names:
+      -
+      - stycznia
+      - lutego
+      - marca
+      - kwietnia
+      - maja
+      - czerwca
+      - lipca
+      - sierpnia
+      - września
+      - października
+      - listopada
+      - grudnia
