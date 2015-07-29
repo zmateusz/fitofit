@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
-  def home
+  def home; end
+
+  def demo
     @question = ""
     if !params[:content].nil?
       @cords = Hash.new

@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :tracks
 
   get 'pages/home'
-  post 'pages/home'
+  get 'pages/demo'
+  post 'pages/demo'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

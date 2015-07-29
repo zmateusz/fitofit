@@ -20,11 +20,10 @@
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
-              = link_to "Index", tracks_path
+              = link_to "Panel", tracks_path
             %li
-              = link_to "New", new_track_path
-            %li
-              %a{:href => "#contact"} Contact
+              %a{:href => "#contact"} Register
         / /.nav-collapse
+    = yield :jumbotron
     .container
       = yield

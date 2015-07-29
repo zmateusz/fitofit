@@ -1,13 +1,25 @@
-= console
+- content_for :jumbotron do
+  .jumbotron
+    .container
+      .row
+        .col-sm-6
+          %h1 Fitofit
+          %p This is a template for a simple marketing or informational website.
+          %p
+            %a.btn.btn-primary.btn-lg{:href => "pages/demo", :role => "button"} Try demo »
+        .col-sm-6
+          %img{:src => "//placehold.it/200x200"}/
 
-= form_for (@question), :url => pages_home_path do |f|
-  = f.text_field :content, value: params[:content], class: "form-control", style: "width: 50%"
-  %br
-  = f.submit 'Search', class: 'btn btn-primary'
-
--if @cords
-  = @cords[:lat]
-  = @cords[:lng]
-  %br
-  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@cords[:lat]}%2C#{@cords[:lng]}&maptype=hybrid"
-  
+.row
+  .col-sm-4
+    %h2 Heading
+    %p Donec id elit non mi porta gravida at eget metus. 
+    %a.btn.btn-default{:href => "#", :role => "button"} View details »
+  .col-sm-4
+    %h2 Heading
+    %p Donec id elit non mi porta gravida at eget metus. 
+    %a.btn.btn-default{:href => "#", :role => "button"} View details »
+  .col-sm-4
+    %h2 Heading
+    %p Donec sed odio dui. Cras justo odio, dapibus ac 
+    %a.btn.btn-default{:href => "#", :role => "button"} View details »
