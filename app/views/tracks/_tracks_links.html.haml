@@ -1,7 +1,7 @@
 = link_to new_track_path, class: "btn btn-primary #{"active" if action_name=="new"}", style: "width: 30%" do
   %span{class: "fa fa-plus"}
   New track
-= link_to tracks_path, class: "btn btn-warning #{"active" if action_name=="index"}", style: "width: 30%" do
+= link_to tracks_path, class: "btn btn-success #{"active" if action_name=="index"}", style: "width: 30%" do
   %span{class: "fa fa-map-marker"}
   My tracks
 = link_to tracks_stats_path, class: "btn btn-danger #{"active" if action_name=="stats"}", style: "width: 30%" do

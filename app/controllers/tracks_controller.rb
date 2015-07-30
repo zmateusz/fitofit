@@ -35,8 +35,10 @@ class TracksController < ApplicationController
     month_tracks.each {|track| @month_days[track.created_at.to_date] += track.distance}
     @week_tracks = month_tracks.select{|track| track.created_at >= week_beginning}
     
-    @distance_sum = 0
-    @week_tracks.map {|track| @distance_sum += track.distance}
+    @month_distance = 0
+    @week_distance = 0
+    month_tracks.map {|track| @month_distance += track.distance}
+    @week_tracks.map {|track| @week_distance += track.distance}
   end
 
   def destroy

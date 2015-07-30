@@ -1,16 +1,30 @@
 = render "tracks_links"
 
-%h1 Tracks show
+%h1.text-center Track show
 
-= @track.location_a
-%br
-= @track.location_b
-%br
-= "#{@track.distance} km"
-%br
-= l @track.created_at
-%br
-= static_map(@track)
+.row
+  .col-sm-offset-2.col-sm-6
+    %dl.dl-horizontal
+      %dt
+        %span.label.label-primary A
+      %dd= @track.location_a
+      %dt 
+        %span.label.label-danger B
+      %dd= @track.location_b
+      %dt
+        %span{class: "fa fa-arrows-h fa-lg"}
+      %dd= "#{@track.distance} km"
+      %dt
+        %span{class: "fa fa-calendar-o fa-lg"}
+      %dd= l @track.created_at
+      %dt
+        %span{class: "fa fa-pencil-square-o fa-lg"}
+      %dd= @track.description
 
-%br
-= link_to "Destroy", @track, method: :delete, data: { confirm: 'Are you sure?' }
+%p
+  = static_map(@track)
+
+%p.text-center
+  = link_to @track, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" do
+    %span{class: "fa fa-trash-o"}
+    Destroy

@@ -55,9 +55,33 @@
   border-radius: 50%;
 }
 
+a {
+  color: #1FA67A;
+}
+
 .table-striped > tbody > tr:hover {
-    background-color: #52D9AD;
+    background-color: #1FA67A;
+    color: white;
+    a {
+      color: white;
+    }
     .btn-default {
       @extend .btn-danger;
     }
+}
+
+.dl-horizontal {
+  width: 700px;
+}
+
+dt, dd {
+  line-height: 2.4;
+}
+
+p > .btn-default:hover {
+  @extend .btn-danger;
+}
+
+.page-header {
+  margin: 10px 0px 20px;
 }

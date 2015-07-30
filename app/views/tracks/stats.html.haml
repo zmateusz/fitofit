@@ -1,17 +1,16 @@
 = render "tracks_links"
 
-%br
-stats page
-%br
-- @week_tracks.each do |track|
-  = link_to track.location_a, track_path(track)
-  %br
+%h1.text-center Statistics
 
-%br
-= "this week: #{@distance_sum} km"
-
-%br
-%br
-- @month_days.each do |key, value|
-  = "#{l key}: #{value} km"
-  %br
+.row
+  .col-sm-3.col-sm-offset-2.col-xs-6
+    %h4.page-header= "This month: #{@month_distance.round(2)} km"
+    - @month_days.each do |key, value|
+      = "#{l key}: #{value} km"
+      %br
+  .col-sm-3.col-xs-6
+    %h4.page-header= "This week: #{@week_distance.round(2)} km"
+    - @week_tracks.each do |track|
+      = link_to "#{l track.created_at}: #{track.distance} km", track_path(track)
+      %br
+  
