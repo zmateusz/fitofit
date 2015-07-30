@@ -17,6 +17,25 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+.navbar {
+  background-color: #1FA67A;
+  margin-bottom: 0;
+  border-color: #1B926C;
+  border-radius: 0;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #B0DDCE;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #FFF;
+}
+
+#main-container {
+  margin-top: 20px;
+}
+
 @media (min-width: 1200px) {
   .jumbotron {
     margin-left: auto;
@@ -29,4 +48,16 @@
   color: white;
   background-image: url("wall.jpg");
   background-size: cover;
+}
+
+.label {
+  font-size: 100%;
+  border-radius: 50%;
+}
+
+.table-striped > tbody > tr:hover {
+    background-color: #52D9AD;
+    .btn-default {
+      @extend .btn-danger;
+    }
 }

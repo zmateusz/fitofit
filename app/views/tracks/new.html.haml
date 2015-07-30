@@ -1,16 +1,30 @@
 = render "tracks_links"
 
-%h1 New track
+%h1.text-center New track
 
-= form_for @track do |f|
+= form_for @track, :html => {class: "form-horizontal"} do |f|
   - if @track.errors.any?
     %ul
     - @track.errors.full_messages.each do |message| 
-      %li= message
-  = f.label :location_a, value: "Adres A"
-  = f.text_field :location_a
-  %br
-  = f.label :location_b, value: "Adres B"
-  = f.text_field :location_b
-  %br
-  = f.submit
+      %li.text-center.text-danger= message
+  .form-group
+    = f.label :location_a, class: "col-sm-2 control-label" do
+      %span.label.label-primary A
+    .col-sm-8
+      = f.text_field :location_a, class: "form-control", placeholder: "Address"
+  .form-group
+    = f.label :location_b, class: "col-sm-2 control-label" do
+      %span.label.label-danger B
+    .col-sm-8
+      = f.text_field :location_b, class: "form-control", placeholder: "Address"
+      %span#helpBlock.help-block Address: place, city or detailed address
+  .form-group
+    = f.label :description, value: "Descr", class: "col-sm-2 control-label"
+    .col-sm-8
+      = f.text_area :description, class: "form-control", placeholder: "You can leave it blank"
+  .form-group
+    %div{class: "col-sm-offset-2 col-sm-8"}
+      = f.submit "Create Track", class: "btn btn-primary"
+
+
+/ :html => {class: "form-horizontal"}
