@@ -21,9 +21,17 @@
           %ul.nav.navbar-nav
             %li
               = link_to "Panel", tracks_path
+            -if !user_signed_in?
+              %li=link_to 'Log in', new_user_session_path
+              %li=link_to 'Sign up', new_user_registration_path
             %li
-              %a{:href => "#contact"} Register
+          -if user_signed_in?
+            %ul.nav.navbar-nav.navbar-right
+              %li=link_to current_user.email, tracks_path
+              %li=link_to 'Log out', destroy_user_session_path, method: "delete"
         / /.nav-collapse
     = yield :jumbotron
+    / %p.notice= notice
+    / %p.alert= alert
     .container#main-container
       = yield
