@@ -27,7 +27,11 @@
             %li
           -if user_signed_in?
             %ul.nav.navbar-nav.navbar-right
-              %li=link_to current_user.email, tracks_path
+              -if current_user.provider.present?
+                %li=image_tag(current_user.image, class: "img-rounded")
+                %li=link_to current_user.name, tracks_path
+              - else
+                %li=link_to current_user.email, tracks_path
               %li=link_to 'Log out', destroy_user_session_path, method: "delete"
         / /.nav-collapse
     = yield :jumbotron
