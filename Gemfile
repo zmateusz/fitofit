@@ -49,5 +49,7 @@ gem 'font-awesome-sass'
 gem 'geocoder'
 gem 'devise'
 gem 'omniauth'
-# gem 'omniauth-github'
+gem 'omniauth-github'
 gem 'omniauth-facebook', :git => 'https://github.com/mkdynamic/omniauth-facebook.git'
+gem 'figaro'
+gem "better_errors", group: :development
