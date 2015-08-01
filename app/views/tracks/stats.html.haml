@@ -10,7 +10,10 @@
       %br
   .col-sm-3.col-xs-6
     %h4.page-header= "This week: #{@week_distance.round(2)} km"
-    - @week_tracks.each do |track|
-      = link_to "#{l track.created_at}: #{track.distance} km", track_path(track)
-      %br
+    - if @week_tracks.nil?
+      No tracks :(
+    - else
+      - @week_tracks.each do |track|
+        = link_to "#{l track.created_at}: #{track.distance} km", track_path(track)
+        %br
   

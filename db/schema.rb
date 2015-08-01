@@ -11,16 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731203555) do
+ActiveRecord::Schema.define(version: 20150731230132) do
 
   create_table "tracks", force: :cascade do |t|
-    t.text     "description"
+    t.text     "description", default: "", null: false
     t.float    "distance"
     t.string   "location_a"
     t.string   "location_b"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "user_id"
   end
+
+  add_index "tracks", ["user_id"], name: "index_tracks_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

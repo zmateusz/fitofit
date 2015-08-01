@@ -2,28 +2,31 @@
 
 %h1.text-center Tracks index
 
-%table.table.table-striped.table-hover
-  %thead
-    %tr
-      %th #
-      %th Track
-      %th Distance
-      %th Date
-      %th
-  %tbody
-    - @tracks.each_with_index do |track, index|
+- if @tracks.empty?
+  %h2.text-center No tracks :(
+- else
+  %table.table.table-striped.table-hover
+    %thead
       %tr
-        %td=index+1
-        %td
-          = link_to track_path(track) do
-            =track.location_a
-            %br
-            =track.location_b
-        %td="#{track.distance} km"
-        %td= l track.created_at
-        %td
-          = link_to track, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" do
-            %span{class: "fa fa-trash"}
+        %th #
+        %th Track
+        %th Distance
+        %th Date
+        %th
+    %tbody
+      - @tracks.each_with_index do |track, index|
+        %tr
+          %td=index+1
+          %td
+            = link_to track_path(track) do
+              =track.location_a
+              %br
+              =track.location_b
+          %td="#{track.distance} km"
+          %td= l track.created_at
+          %td
+            = link_to track, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" do
+              %span{class: "fa fa-trash"}
 
 
 

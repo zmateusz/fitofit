@@ -1,6 +1,8 @@
 class Track < ActiveRecord::Base
-  validates :location_a, presence: true
-  validates :location_b, presence: true
+  belongs_to :user
+
+  validates :location_a, presence: true, length: { minimum: 3 }
+  validates :location_b, presence: true, length: { minimum: 3 }
 
   before_save :calculate_distance
   
