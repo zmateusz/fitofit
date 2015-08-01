@@ -37,7 +37,7 @@ class TracksController < ApplicationController
 
     @month_distance = 0
     @week_distance = 0
-    month_tracks = Track.where("created_at >= '#{month_beginning}' AND user_id == #{current_user.id}")
+    month_tracks = Track.where("created_at >= '#{month_beginning}' AND user_id = #{current_user.id}")
     if month_tracks.present?
       month_tracks.each {|track| @month_days[track.created_at.to_date] += track.distance}
       @week_tracks = month_tracks.select{|track| track.created_at >= week_beginning}
