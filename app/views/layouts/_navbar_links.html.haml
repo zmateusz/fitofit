@@ -1,0 +1,16 @@
+#navbar.collapse.navbar-collapse
+  %ul.nav.navbar-nav
+    %li
+      = link_to "Panel", tracks_path
+    -if !user_signed_in?
+      %li=link_to 'Log in', new_user_session_path
+      %li=link_to 'Sign up', new_user_registration_path
+    %li
+  -if user_signed_in?
+    %ul.nav.navbar-nav.navbar-right
+      -if current_user.provider.present?
+        %li=image_tag(current_user.image, class: "img-rounded")
+        %li=link_to current_user.name, tracks_path
+      - else
+        %li=link_to current_user.email, tracks_path
+      %li=link_to 'Log out', destroy_user_session_path, method: "delete"
