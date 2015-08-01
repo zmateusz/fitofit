@@ -5,26 +5,25 @@
         .col-sm-7
           %h1 Fitofit
           %p Rejestrator aktywności
+          %br
           %p
             %a.btn.btn-primary.btn-lg{:href => "pages/demo", :role => "button"} Sprawdź demo »
-        .col-xs-8.col-sm-5.col-md-3
+        .col-xs-12.col-sm-5.col-md-3
           - if !user_signed_in?
             .well
               = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-                .field
-                  = f.label :email, value: "E-mail"
-                  %br/
-                  = f.email_field :email, autofocus: true
-                .field
-                  = f.label :password, value: "Hasło"
-                  %br/
-                  = f.password_field :password, autocomplete: "off"
+                .form-group
+                  = f.label :email, value: "E-mail", class: "control-label"
+                  = f.email_field :email, autofocus: true, class: "form-control"
+                .form-group
+                  = f.label :password, value: "Hasło", class: "control-label"
+                  = f.password_field :password, autocomplete: "off", class: "form-control"
                 - if devise_mapping.rememberable?
-                  .field
+                  .form-group
                     = f.check_box :remember_me
-                    = f.label :remember_me, value: "Zapamiętaj"
-                .actions
-                  = f.submit "Zaloguj"
+                    = f.label :remember_me, value: "Zapamiętaj", class: "control-label"
+                .form-group
+                  = f.submit "Zaloguj", class: "btn btn-primary"
               - resource_class.omniauth_providers.each do |provider|
                 = link_to "Zaloguj z #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider)
                 %br
@@ -44,4 +43,7 @@
   %footer.footer
     .container
       %br
-      %p.text-right zmateusz
+      %p.text-left 
+        zmateusz
+        %a{href: "https://github.com/zmateusz/fitofit"} 
+          =icon("github-square")

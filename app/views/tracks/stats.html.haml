@@ -18,7 +18,7 @@
   .col-sm-3.col-xs-6
     %h4.page-header= "W tym tygodniu: #{@week_distance.round(2)} km"
     - if @week_tracks.nil?
-      No tracks :(
+      Brak danych :(
     - else
       - @week_tracks.each do |track|
         = link_to "#{l track.created_at}: #{track.distance} km", track_path(track)
