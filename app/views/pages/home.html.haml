@@ -4,41 +4,44 @@
       .row
         .col-sm-7
           %h1 Fitofit
-          %p Log your activities and get some stats
+          %p Rejestrator aktywności
           %p
-            %a.btn.btn-primary.btn-lg{:href => "pages/demo", :role => "button"} Try demo »
+            %a.btn.btn-primary.btn-lg{:href => "pages/demo", :role => "button"} Sprawdź demo »
         .col-xs-8.col-sm-5.col-md-3
           - if !user_signed_in?
             .well
               = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
                 .field
-                  = f.label :email
+                  = f.label :email, value: "E-mail"
                   %br/
                   = f.email_field :email, autofocus: true
                 .field
-                  = f.label :password
+                  = f.label :password, value: "Hasło"
                   %br/
                   = f.password_field :password, autocomplete: "off"
                 - if devise_mapping.rememberable?
                   .field
                     = f.check_box :remember_me
-                    = f.label :remember_me
+                    = f.label :remember_me, value: "Zapamiętaj"
                 .actions
-                  = f.submit "Log in"
+                  = f.submit "Zaloguj"
               - resource_class.omniauth_providers.each do |provider|
-                = link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider)
+                = link_to "Zaloguj z #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider)
                 %br
 
 .row
   .col-sm-4
-    %h2 Heading
-    %p Donec id elit non mi porta gravida at eget metus. 
-    %a.btn.btn-default{:href => "#", :role => "button"} View details »
+    %h1.text-center=icon("map-marker", class: "homepage-icon")
+    %p.text-center Zobacz odwiedzone miejsca na mapie
   .col-sm-4
-    %h2 Heading
-    %p Donec id elit non mi porta gravida at eget metus. 
-    %a.btn.btn-default{:href => "#", :role => "button"} View details »
+    %h1.text-center=icon("compass", class: "homepage-icon")
+    %p.text-center Wyliczanie odległości i statystyk
   .col-sm-4
-    %h2 Heading
-    %p Donec sed odio dui. Cras justo odio, dapibus ac 
-    %a.btn.btn-default{:href => "#", :role => "button"} View details »
+    %h1.text-center=icon("user", class: "homepage-icon")
+    %p.text-center Łatwe logowanie przez Facebook i Github
+
+- content_for :footer do
+  %footer.footer
+    .container
+      %br
+      %p.text-right zmateusz

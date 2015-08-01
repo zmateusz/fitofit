@@ -1,6 +1,6 @@
 = render "tracks_links"
 
-%h1.text-center New track
+%h1.text-center Nowa aktywność
 
 = form_for @track, :html => {class: "form-horizontal"} do |f|
   - if @track.errors.any?
@@ -11,17 +11,17 @@
     = f.label :location_a, class: "col-sm-2 control-label" do
       %span.label.label-primary A
     .col-sm-8
-      = f.text_field :location_a, class: "form-control", placeholder: "Address"
+      = f.text_field :location_a, class: "form-control", placeholder: "Adres"
   .form-group
     = f.label :location_b, class: "col-sm-2 control-label" do
       %span.label.label-danger B
     .col-sm-8
-      = f.text_field :location_b, class: "form-control", placeholder: "Address"
-      %span#helpBlock.help-block Address: place, city or detailed address (Słomińskiego 7, Warszawa, Polska)
+      = f.text_field :location_b, class: "form-control", placeholder: "Adres"
+      %span#helpBlock.help-block Adres: miejscowość, miasto lub dokładny adres (Słomińskiego 7, Warszawa, Polska)
   .form-group
-    = f.label :description, value: "Descr", class: "col-sm-2 control-label"
+    = f.label :description, value: "Opis", class: "col-sm-2 control-label"
     .col-sm-8
-      = f.text_area :description, class: "form-control", placeholder: "You can leave it blank"
+      = f.text_area :description, class: "form-control", placeholder: "To pole może być puste"
   .form-group
     %div{class: "col-sm-offset-2 col-sm-8"}
-      = f.submit "Create Track", class: "btn btn-primary"
+      = f.submit "Zapisz aktywność", class: "btn btn-primary"

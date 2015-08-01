@@ -1,6 +1,6 @@
 = render "tracks_links"
 
-%h1.text-center Track show
+%h1.text-center Aktywność
 
 .row
   .col-sm-offset-2.col-sm-6
@@ -27,4 +27,4 @@
 %p.text-center
   = link_to @track, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" do
     %span{class: "fa fa-trash-o"}
-    Destroy
+    Usuń

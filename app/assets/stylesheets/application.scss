@@ -17,6 +17,15 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body { 
+  margin-bottom: 60px;
+}
+
 .navbar {
   background-color: #1FA67A;
   margin-bottom: 0;
@@ -39,6 +48,11 @@
 
 #main-container {
   margin-top: 20px;
+  .homepage-icon {
+    border: 1px solid #1FA67A;
+    padding: 35px 40px;
+    border-radius: 50%;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -51,10 +65,12 @@
 
 .jumbotron {
   color: white;
+  text-shadow: 2px 2px 4px #000000;
   background-image: url("wall2.jpg");
   background-size: cover;
-  #new_user {
+  .well {
     color: #1FA67A;
+    text-shadow: none;
   }
 }
 
@@ -92,4 +108,12 @@ p > .btn-default:hover {
 
 .page-header {
   margin: 10px 0px 20px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #1FA67A;
 }

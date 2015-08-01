@@ -1,22 +1,22 @@
 = render "tracks_links"
 
-%h1.text-center Statistics
+%h1.text-center Statystyki
 
 .row
   .col-sm-3.col-sm-offset-2.col-xs-6
-    %h4.page-header= "This month: #{@month_distance.round(2)} km"
+    %h4.page-header= "W tym miesiącu: #{@month_distance.round(2)} km"
     %table.table.table-striped.table-hover.table-condensed.table-bordered
       %thead
         %tr
-          %th Date
-          %th Distance
+          %th Data
+          %th Dystans
       %tbody
         - @month_days.each do |key, value|
           %tr
             %td=l key
             %td="#{value} km"
   .col-sm-3.col-xs-6
-    %h4.page-header= "This week: #{@week_distance.round(2)} km"
+    %h4.page-header= "W tym tygodniu: #{@week_distance.round(2)} km"
     - if @week_tracks.nil?
       No tracks :(
     - else

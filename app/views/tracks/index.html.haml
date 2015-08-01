@@ -1,17 +1,17 @@
 = render "tracks_links"
 
-%h1.text-center Tracks index
+%h1.text-center Moje aktywności
 
 - if @tracks.empty?
-  %h2.text-center No tracks :(
+  %h2.text-center Brak danych :(
 - else
   %table.table.table-striped.table-hover
     %thead
       %tr
         %th #
-        %th Track
-        %th Distance
-        %th Date
+        %th Trasa
+        %th Dystans
+        %th Data
         %th
     %tbody
       - @tracks.each_with_index do |track, index|
