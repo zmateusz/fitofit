@@ -1,10 +1,14 @@
-= form_for (@question), :url => pages_demo_path do |f|
-  = f.text_field :content, value: params[:content], class: "form-control", style: "width: 50%"
-  %br
-  = f.submit 'Search', class: 'btn btn-primary'
-
--if @cords
-  = @cords[:lat]
-  = @cords[:lng]
-  %br
-  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@cords[:lat]}%2C#{@cords[:lng]}&maptype=hybrid"
+.row
+  .col-md-offset-3.col-md-9
+    = form_for (@demo_search), :url => pages_demo_path do |f|
+      Adres A
+      = f.text_field :location_a, value: params[:location_a], class: "form-control", style: "width: 60%"
+      %br
+      Adres B
+      = f.text_field :location_b, value: params[:location_b], class: "form-control", style: "width: 60%"
+      %br
+      = f.submit 'Szukaj', class: 'btn btn-primary'
+      -if @distance
+        = "Odległość:  #{@distance} km"
+        %br
+        = static_map(@track, "left")

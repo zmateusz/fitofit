@@ -22,9 +22,9 @@
       %dd= @track.description
 
 %p
-  = static_map(@track)
+  = static_map(@track, "center")
 
 %p.text-center
-  = link_to @track, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" do
+  = link_to @track, method: :delete, data: { confirm: 'Na pewno?' }, class: "btn btn-default" do
     %span{class: "fa fa-trash-o"}
     Usuń

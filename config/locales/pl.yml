@@ -22,3 +22,18 @@ pl:
       - października
       - listopada
       - grudnia
+  activerecord:
+    attributes:
+      track:
+        location_a: "Adres A"
+        location_b: "Adres B"
+    errors:
+      models:
+        track:
+          attributes:
+            location_a:
+              blank: "nie może być pusty"
+              too_short: "jest za krótki - minimum 3 znaki"
+            location_b:
+              blank: "nie może być pusty"
+              too_short: "jest za krótki - minimum 3 znaki"
